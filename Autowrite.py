@@ -1,10 +1,16 @@
 
-
-
-
-
-
-
+RawText = []
+with open("input.txt") as f:
+    for i in f:
+        i = i.strip("\n")
+        RawText.append(i)
+Infos = RawText[1::2]
+print(Infos)
+Name = Infos[0]
+Dozent = Infos[1]
+ExperimentNum = Infos[2]
+ExpTitle = Infos[3]
+Date = Infos[4]
 
 
 
@@ -41,12 +47,12 @@ print("{")
 print("\\centering")
 print("\\large")
 print("Physiklabor für Anfänger*innen \\\\")
-print("Ferienpraktikum im Sommersemester 2018 \\\\[4mm]")
+print("Ferienpraktikum im Wintersemester 2019 \\\\[4mm]")
 print("\\textbf{\\LARGE ")
-print("	Versuch 75: Lichtmikroskop")
+print("	Versuch ", ExperimentNum, ":" ,ExpTitle)
 print(")} \\\\[3mm]")
-print("(durchgeführt am 02.10.2018 bei Daniel Bartle) \\\\")
-print("Ye Joon Kim, Marouan Zouari\\\\")
+print("(durchgeführt am ", Date, " bei",  Dozent, "\\\\")
+print(Name, "\\\\")
 print("\\today \\\[10mm]")
 print("}")
 

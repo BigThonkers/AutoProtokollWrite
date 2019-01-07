@@ -1,0 +1,13 @@
+Name (separated by commas):
+
+Name of Dozent:
+
+Experiment Number:
+
+Title of Experiment:
+
+Date of Experiment:
+
+Goal of Experiment (In short Phrases (Ex. die Erdbeschleunigung messen), separated by commas)
+
+Materials:
