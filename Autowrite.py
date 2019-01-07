@@ -12,13 +12,50 @@ ExperimentNum = Infos[2]
 ExpTitle = Infos[3]
 Date = Infos[4]
 
+
+
 Goal = Infos[5]
-Goal = Goal.split()
-GoalVerb = Goal[-1]
-Goalrest = Goal[0:-1]
-Goalrest = " ".join(Goalrest)
+for i in Goal:
+    if i == ",":
+        MultipleGoals = True
+        break
+    else:
+        MultipleGoals = False
 
+#Goal = Goal.split()
+#GoalVerb = Goal[-1]
+#Goalrest = Goal[0:-1]
+#Goalrest = " ".join(Goalrest)
+#print(Goals)
+if MultipleGoals == False:
+    Goal = Goal.split()
+    GoalVerb = Goal[-1]
+    Goalrest = Goal[0:-1]
+    Goalrest = " ".join(Goalrest)
+    Phrase = Goalrest, "zu", GoalVerb
+if MultipleGoals == True:
+    Goals = Goal.split(",")
+    FinalPhrase = []
+    for i in Goals:
+        i = i.split()
+        GoalVerb = i[-1]
+        Goalrest = i[0:-1]
+        Phrase2 = " ".join(Goalrest), " zu ", GoalVerb
+        Phrase = "".join(Phrase2)
+        FinalPhrase.append(" ".join(Phrase2))
 
+FinalFinalPhrase = ", ".join(FinalPhrase[0:-1]), " und ", FinalPhrase[-1]
+print("".join(FinalFinalPhrase))
+        
+ #   PhraseRest = ",".join(Goals[0:-1])
+  #  LastGoal = Goals[-1]
+   # LastGoal = LastGoal.split()
+   # GoalVerb = LastGoal[-1]
+   # Goalrest = LastGoal[0:-1]
+   # Goalsrest = " ".join(Goalrest)
+   # Phrase = PhraseRest," und ", Goalrest[0], " zu ", GoalVerb
+
+PhraseFinal = "".join(Phrase)
 
 print("\\documentclass[11pt,a4paper]{article}")
 
@@ -59,7 +96,7 @@ print("\\today \\\[10mm]")
 print("}")
 
 print("\\section{Einleitung}")
-print("Das Ziel des Versuchs ist es, ", Goalrest, " zu ", GoalVerb)
+print("Das Ziel des Versuchs ist es,", "".join(FinalFinalPhrase))
 print("\\section{Aufbau}")
 print("\\section{Durchführung}")
 print("\\section{Auswertung und Fehleranalyse}")
