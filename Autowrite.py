@@ -14,25 +14,10 @@
 
 print("\\documentclass[11pt,a4paper]{article}")
 
-print("\\usepackage[utf8]{inputenc}")
-print("\\usepackage[T1]{fontenc}")
-print("\\usepackage{lmodern}")
-print("\\usepackage{tcolorbox}")
+import requests 
+latools = "https://raw.githubusercontent.com/BigThonkers/LaTools/master/tool%20kit.tex"
+print(requests.get(latools).text)
 
-
-print("\\usepackage[german]{babel}")
-
-
-print("\\setlength{\parindent}{0pt}")
-print("\\setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}")
-
-print("\\usepackage{amsmath}")
-
-
-print("\\usepackage{graphicx}")
-
-print("\\usepackage[section]{placeins}")
-print("\\usepackage{booktabs}")
 print("\\begin{document}")
 
 
