@@ -12,9 +12,11 @@ ExperimentNum = Infos[2]
 ExpTitle = Infos[3]
 Date = Infos[4]
 
-
-
-
+Goal = Infos[5]
+Goal = Goal.split()
+GoalVerb = Goal[-1]
+Goalrest = Goal[0:-1]
+Goalrest = " ".join(Goalrest)
 
 
 
@@ -57,6 +59,7 @@ print("\\today \\\[10mm]")
 print("}")
 
 print("\\section{Einleitung}")
+print("Das Ziel des Versuchs ist es, ", Goalrest, " zu ", GoalVerb)
 print("\\section{Aufbau}")
 print("\\section{Durchführung}")
 print("\\section{Auswertung und Fehleranalyse}")
