@@ -32,7 +32,7 @@ if MultipleGoals == False:
     GoalVerb = Goal[-1]
     Goalrest = Goal[0:-1]
     Goalrest = " ".join(Goalrest)
-    Phrase = Goalrest, "zu", GoalVerb
+    FinalFinalPhrase = Goalrest, " zu ", GoalVerb
 if MultipleGoals == True:
     Goals = Goal.split(",")
     FinalPhrase = []
@@ -43,9 +43,19 @@ if MultipleGoals == True:
         Phrase2 = " ".join(Goalrest), " zu ", GoalVerb
         Phrase = "".join(Phrase2)
         FinalPhrase.append(" ".join(Phrase2))
+        FinalFinalPhrase = ", ".join(FinalPhrase[0:-1]), " und ", FinalPhrase[-1]
 
-FinalFinalPhrase = ", ".join(FinalPhrase[0:-1]), " und ", FinalPhrase[-1]
-print("".join(FinalFinalPhrase))
+
+Materials = Infos[6]
+Materials = Materials.split(",")
+MaterialsList = []
+for i in Materials:
+    MaterialsList.append("\\item "+ i)
+MaterialsList = "\n".join(MaterialsList)
+print(MaterialsList)
+
+
+
         
  #   PhraseRest = ",".join(Goals[0:-1])
   #  LastGoal = Goals[-1]
@@ -83,6 +93,10 @@ print("}")
 print("\\section{Einleitung}")
 print("Das Ziel des Versuchs ist es,", "".join(FinalFinalPhrase))
 print("\\section{Aufbau}")
+print("Für diesen Versuch wurden die folgenden Apparaten verwendet:")
+print("\\begin{itemize}")
+print(MaterialsList)
+print("\\end{itemize}")
 print("\\section{Durchführung}")
 print("\\section{Auswertung und Fehleranalyse}")
 print("\\section{Diskussion der Ergebnisse}")
