@@ -5,7 +5,7 @@ with open("input.txt") as f:
         i = i.strip("\n")
         RawText.append(i)
 Infos = RawText[1::2]
-print(Infos)
+
 Name = Infos[0]
 Dozent = Infos[1]
 ExperimentNum = Infos[2]
@@ -52,7 +52,7 @@ MaterialsList = []
 for i in Materials:
     MaterialsList.append("\\item "+ i)
 MaterialsList = "\n".join(MaterialsList)
-print(MaterialsList)
+
 
 
 
@@ -70,7 +70,7 @@ PhraseFinal = "".join(Phrase)
 #print("\\documentclass[11pt,a4paper]{article}")
 
 import requests 
-latools = "https://raw.githubusercontent.com/BigThonkers/LaTools/master/tool%20kit.tex"
+latools = "https://raw.githubusercontent.com/BigThonkers/AutoProtokollWrite/master/defpack.tex"
 print(requests.get(latools).text)
 
 print("\\begin{document}")
@@ -84,8 +84,8 @@ print("Physiklabor für Anfänger*innen \\\\")
 print("Ferienpraktikum im Wintersemester 2019 \\\\[4mm]")
 print("\\textbf{\\LARGE ")
 print("	Versuch ", ExperimentNum, ":" ,ExpTitle)
-print(")} \\\\[3mm]")
-print("(durchgeführt am ", Date, " bei",  Dozent, "\\\\")
+print("} \\\\[3mm]")
+print("(durchgeführt am ", Date, " bei",  Dozent, ")\\\\")
 print(Name, "\\\\")
 print("\\today \\\[10mm]")
 print("}")
@@ -101,5 +101,5 @@ print("\\section{Durchführung}")
 print("\\section{Auswertung und Fehleranalyse}")
 print("\\section{Diskussion der Ergebnisse}")
 print("\\section{Literatur}")
-
+print("\\end{document}")
 
