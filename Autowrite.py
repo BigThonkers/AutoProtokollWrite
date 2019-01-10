@@ -67,7 +67,7 @@ print(MaterialsList)
 
 PhraseFinal = "".join(Phrase)
 
-print("\\documentclass[11pt,a4paper]{article}")
+#print("\\documentclass[11pt,a4paper]{article}")
 
 import requests 
 latools = "https://raw.githubusercontent.com/BigThonkers/LaTools/master/tool%20kit.tex"

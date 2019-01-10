@@ -1,14 +1,14 @@
 Name (separated by commas):
-
+Wdinoi
 Name of Dozent:
-
+owienf woefin
 Experiment Number:
-
+24
 Title of Experiment:
-
+ewfeoinwoei woiefn
 Date of Experiment:
-
+weifoiwnef
 Goal of Experiment (In short Phrases (Ex. die Erdbeschleunigung messen), separated by commas)
-wefwef asd
+wefwef asd, weoifn weofin
 Materials:
 gegwwe,qwoiq,fdiod
