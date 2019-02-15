@@ -67,10 +67,9 @@ MaterialsList = "\n".join(MaterialsList)
 
 PhraseFinal = "".join(Phrase)
 
-#print("\\documentclass[11pt,a4paper]{article}")
 
 import requests 
-latools = "https://raw.githubusercontent.com/BigThonkers/AutoProtokollWrite/master/defpack.tex"
+latools = "https://raw.githubusercontent.com/BigThonkers/LaTools/master/tool%20kit.tex"
 print(requests.get(latools).text)
 
 print("\\begin{document}")
