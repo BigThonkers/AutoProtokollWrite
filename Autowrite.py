@@ -70,6 +70,23 @@ PhraseFinal = "".join(Phrase)
 
 import requests 
 latools = "https://raw.githubusercontent.com/BigThonkers/LaTools/master/tool%20kit.tex"
+# WORK IN PROGRESS
+def color_comment(template):
+    lines = []
+    for line in template.split("\n"):
+        if "color" in line:
+            continue
+        lines.append(line)
+    return "\n".join(lines)
+
+# just a placeholder in case someone ever doesn't want to remove the coloring lines
+
+#if coloring == True:
+#    print(requests.get(latools).text)
+#if coloring == False:
+#    latools = color_comment(latools)
+#    print(requests.get(latools).text)
+latools = color_comment(latools)
 print(requests.get(latools).text)
 
 print("\\begin{document}")
