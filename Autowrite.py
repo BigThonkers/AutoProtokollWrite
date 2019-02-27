@@ -65,7 +65,7 @@ MaterialsList = "\n".join(MaterialsList)
    # Goalsrest = " ".join(Goalrest)
    # Phrase = PhraseRest," und ", Goalrest[0], " zu ", GoalVerb
 
-PhraseFinal = "".join(Phrase)
+#PhraseFinal = "".join(Phrase)
 
 
 import requests 
@@ -88,7 +88,8 @@ print("(durchgeführt am ", Date, " bei",  Dozent, ")\\\\")
 print(Name, "\\\\")
 print("\\today \\\[10mm]")
 print("}")
-
+print("\\tableofcontents")
+print("\\newpage")
 print("\\section{Einleitung}")
 print("Das Ziel des Versuchs ist es,", "".join(FinalFinalPhrase))
 print("\\section{Aufbau}")

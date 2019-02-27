@@ -1,14 +1,14 @@
 Name (separated by commas):
-Wdinoi
+Ye Joon Kim, Patrick Münnich
 Name of Dozent:
-owienf woefin
+Abraham Mustermann
 Experiment Number:
 24
 Title of Experiment:
-ewfeoinwoei woiefn
+Statistische Schwankungen und Wahrscheinlichkeitsverteilungen
 Date of Experiment:
-weifoiwnef
+4.3.2018
 Goal of Experiment (In short Phrases (Ex. die Erdbeschleunigung messen), separated by commas)
-wefwef asd, weoifn weofin
+die Häufigkeitsverteilung der Impulse eines Zählrohres ermitteln
 Materials:
-gegwwe,qwoiq,fdiod
+Ein Radioaktives Präparat,ein Geiger-Müller-Zählrohr,Hochspannungsnetzgerät,Digitalzähler,PC

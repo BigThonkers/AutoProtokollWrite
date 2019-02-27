@@ -1,27 +1,115 @@
-% die Standard-Dokumentenklasse
-\documentclass[11pt,a4paper]{article} %% 1.Ebene = chapter, headings
-
-% input encoding, font encoding, outline font
-\usepackage[utf8]{inputenc} 
-\usepackage[T1]{fontenc} 
-\usepackage{lmodern}
-\usepackage{tcolorbox}
-% Sprache
+% packages
+\PassOptionsToPackage{dvipsnames}{xcolor} % needed to get colors working in certain environments
+\documentclass[titlepage,12pt,a4paper,ngerman]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[german]{babel}
-
-% Absatzformatierung
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{1ex plus 0.5ex minus 0.5ex}
-
-% erweiterte mathematische Symbole
-\usepackage{amsmath} 
-
-% für Abbildungen
-\usepackage{graphicx} 
-
-% für Tabellen
+\usepackage{graphicx}
+\usepackage{wrapfig}  % used for wrapping a figure alternative to using minipages
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}  % removes coloring for links
+\usepackage{cleveref}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{tikz-cd}
+\usepackage{nicefrac}  % adds \nicefrac alternative to regular \frac
+\usepackage{mathtools}
+\usepackage[margin=1in]{geometry}  % changes the margins on all pages
+\usepackage{enumerate}
+\usepackage{tocloft}
+\usepackage{tcolorbox}
+\setlength{\parskip}{1em}
+\usepackage{cancel}  % adds \cancel which adds strikethrough
+\usepackage{epigraph}  % adds \epigraph used to add fancy quotes to the beginning of chapters
+\usepackage{fancyhdr}
+\usepackage{bm}  % adds \bm to make symbols bold, replaces outdated \boldsymbol
+\usepackage[shortlabels]{enumitem}
+\usepackage{placeins}
 \usepackage{booktabs}
+\usepackage{wasysym}
 
-% für Hyperlinks
-\usepackage[colorlinks]{hyperref}
-\graphicspath{}
+\setlength{\headheight}{35pt}
+\setlength\epigraphwidth{.8\textwidth}
+
+% alt math font
+\usepackage{eulervm}  % switches to alternate math font, usually requires extra download
+
+
+% general commands
+
+% zu zeigen symbol
+\newcommand{\zz}{\fontfamily{cmss} \selectfont{Z\kern-.61em\raise-0.7ex\hbox{Z}:}}
+
+% build over
+\newcommand{\bov}[2]{\buildrel{#2} \over{#1}}
+
+% better looking := (defined as)
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt \hbox{\scriptsize.}\hbox{\scriptsize.}}}=}
+\newcommand*{\eqdef}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt \hbox{\scriptsize.}\hbox{\scriptsize.}}}}
+
+% integral differential d
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand{\difi}[1]{\mathrm{d}#1\mathop{}\!}
+\newcommand{\dd}{\dif}
+
+\newcommand{\verteq}{\rotatebox{90}{$\,=$}}  % used for commands below
+\newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\verteq}{#2}}{#1}}  % adds equal to underneath
+\newcommand{\equaltoup}[2]{\overset{\scriptstyle\underset{\mkern4mu\verteq}{#2}}{#1}}  % adds equal to above
+\newcommand{\custo}[3]{\underset{\scriptstyle\overset{\mkern4mu\rotatebox{-90}{$\,#1$}}{#3}}{#2}}  % same as above but replaces equal sign with input #1
+\newcommand{\custoup}[3]{\overset{\scriptstyle\overset{\mkern4mu\rotatebox{-90}{$\,#1$}}{#3}}{#2}}
+\newcommand{\tx}[1]{\textrm{#1}}
+\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\ub}[1]{\underbrace{#1}}
+\newcommand{\ob}[1]{\overbrace{#1}}
+\newcommand{\const}{\tx{const.}}
+\newcommand{\casess}[4]{\left\{ \begin{array}{ll} {#1} & {#2} \\ {#3} & {#4} \end{array} \right.}
+\newcommand{\hfw}{\color{RubineRed}\tx{ $\star$hier fehlt was$\star$ } \color{black}}  % used to indicate to the reader that something is missing here
+\newcommand{\prt}[2]{\frac{\partial #1}{\partial #2}}  % used for partial derivatives, tip: input #1 can be left blank
+
+% linear algebra commands
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}  % checkmark used for proofs
+\newcommand{\im}{\tx{im}}
+\newcommand{\spa}{\tx{span}}
+\newcommand{\adj}{\tx{adj}}
+\newcommand{\grad}{\tx{grad}}
+\newcommand{\ord}{\tx{ord}}
+\newcommand{\basis}[3]{\{#1_{#2}, \dots, #1_{#3}\}}
+\newcommand{\dmat}[3]{\begin{pmatrix} #1_{#2}&&\\ &\ddots& \\ && #1_{#3} \end{pmatrix}}
+\newcommand{\ska}[2]{\langle #1 , #2 \rangle}  % scalar product of input 1, and 2 can also be used for braket notation
+
+% exp commands
+\newcommand{\kq}{\frac{1}{4\pi\epsilon_0}}  % writes out the whole constant k from electrodynamics
+\newcommand{\uind}{U_{\tx{ind}}}
+\newcommand{\folie}[1]{\color{gray}[Folie: #1]\color{black}}  % used to tell the reader that there was multimedia content during a lecture
+\newcommand{\versuch}[1]{\color{red!50!black} Versuch: \color{black} #1\\ }  % used to tell the reader that there was a live experiment
+
+% theo commands
+\newcommand{\lag}{\mathcal{L}}  % used for Lagrange function
+\newcommand{\ham}{\mathcal{H}}  % used for Hamiltonian function
+\newcommand{\gre}{\mathcal{G}}  % used for Green's function
+\newcommand{\prd}[2]{\frac{\tx{d} #1}{\tx{d} #2}}  % standard derivative, input #1 can be left blank
+\newcommand{\eofr}{\vec{E}(\vec{r})}
+\newcommand{\pofr}{\Phi(\vec{r})}
+\renewcommand{\Phi}{\varPhi}
+\newcommand{\grr}{\mathcal G(\vec{r},\vec{r}')}
+\newcommand{\vphi}{\varphi}
+
+% lab commands
+\newcommand\mean{\begin{equation}
+		\frac{\sum_{i=1}^n x_i}{n}\label{mean}
+\end{equation}}  % shortcut for the standard Mean function
+\newcommand\meanstd{\begin{equation}
+		s_x=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2}\label{meanstd}
+\end{equation}}  % shortcut for the standard derivative mean function
+\newcommand\prodquo{\begin{equation}\left\vert\frac{\Delta z}{z}\right\vert=\sqrt{\left(a\frac{\Delta x}{x}\right)^2+\left(b\frac{\Delta y}{y}\right)^2+\ldots}\textrm{ f\"ur }z=x^a\ y^b\ldots\end{equation}}
+\newcommand\tfuncd{\begin{equation}
+		t=\frac{\vert x_n-y_n\vert}{\sqrt{x_s^2+y_s^2}}
+\end{equation}}
+\newcommand\tfunc{\begin{equation}
+		t=\frac{\vert x-y_0\vert}{u_x}
+\end{equation}}
