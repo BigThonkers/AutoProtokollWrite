@@ -3,12 +3,12 @@ Ye Joon Kim, Patrick Münnich
 Name of Dozent:
 Abraham Mustermann
 Experiment Number:
-24
+45
 Title of Experiment:
-Statistische Schwankungen und Wahrscheinlichkeitsverteilungen
+Kennlinien elektrischer Leiter und Bauelemente
 Date of Experiment:
-4.3.2018
+6.3.2018
 Goal of Experiment (In short Phrases (Ex. die Erdbeschleunigung messen), separated by commas)
-die Häufigkeitsverteilung der Impulse eines Zählrohres ermitteln
+Die Kennlinien eines ohm'schen Widerstands, einer Glühlampe und einer Halbleiterdiode vergleichen,Die Kennlinien eines pnp-Transistors in Emitterschaltung messen
 Materials:
-Ein Radioaktives Präparat,ein Geiger-Müller-Zählrohr,Hochspannungsnetzgerät,Digitalzähler,PC
+Spannungsquelle,Doppel-Spannungsversorgungsgerät,Strommessgerät,Multimeter,Ohmscher Widerstand,Glühlampe,Halbleiterdiode
